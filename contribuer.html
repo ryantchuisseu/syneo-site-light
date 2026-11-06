@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contribuer — SYNEO</title>
+<meta name="description" content="Entrepreneur, étudiant, mentor : proposez une actualité, une opportunité ou votre portrait. Chaque contenu est relu par l'équipe SYNEO.">
+<meta name="theme-color" content="#1B3B6E">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contribuer — SYNEO">
+<meta property="og:description" content="Entrepreneur, étudiant, mentor : proposez une actualité, une opportunité ou votre portrait. Chaque contenu est relu par l'équipe SYNEO.">
+<meta property="og:image" content="assets/film-poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="ev"><b>PRISME</b> — Conférence inaugurale · 18 novembre 2026 · ENSPY, Yaoundé</span>
+    <div class="cd" id="cd" aria-label="Temps restant avant la conférence"><span><b id="cd-j">–</b>Jours</span><span><b id="cd-h">–</b>Heures</span><span><b id="cd-m">–</b>Min</span></div>
+    <a class="btn btn-o btn-sm" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="SYNEO, accueil">
+      <img src="assets/logo.jpg" alt="" width="48" height="48">
+      <span><b>SYN<i>EO</i></b><small>La Synergie pour le développement</small></span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Menu principal"><ul><li><a href="index.html">Accueil</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="prisme.html">PRISME</a></li><li><a href="a-propos.html">Qui sommes-nous</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="contribuer.html" aria-current="page">Contribuer</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="btn btn-o btn-sm cta" href="contribuer.html">Proposer un contenu</a>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Accueil</a> / Contribuer</p>
+    <h1>Contribuer</h1>
+    <p>Entrepreneur, étudiant, mentor : partagez une actualité, une opportunité ou votre parcours. Chaque contenu est relu par l'équipe avant publication.</p>
+  </div>
+</section>
+<section class="sec alt">
+  <div class="wrap split" style="align-items:start">
+    <div class="txt">
+      <span class="badge">Comment ça marche</span>
+      <h2 style="font-size:clamp(26px,3.2vw,36px)">Publiez sur SYNEO en 3 étapes</h2>
+      <ol class="numbered">
+        <li><b class="n">1</b><span><strong>Vous proposez</strong> un sujet dans la bonne rubrique.</span></li>
+        <li><b class="n">2</b><span><strong>L'équipe vérifie</strong> les faits et la forme.</span></li>
+        <li><b class="n">3</b><span><strong>Le contenu est publié</strong> avec votre nom.</span></li>
+      </ol>
+      <div class="grid" style="margin-top:28px">
+        <div class="card"><h3>Raconte ton parcours</h3><p>Porteur de projet ? Partage tes réussites, tes difficultés et ce que tu as appris.</p></div>
+        <div class="card"><h3>Partage ton expertise</h3><p>Développeur, chercheur, mentor ? Publie une analyse ou un tutoriel.</p></div>
+        <div class="card"><h3>Fais grandir le réseau</h3><p>Une rencontre, un stage, un appel à projets ? Propose-le à la communauté.</p></div>
+      </div>
+    </div>
+    <form class="form" id="form-contrib" novalidate>
+      <h3 style="font-size:20px">Votre proposition</h3>
+      <div class="row2">
+        <label for="f-nom">Nom complet<input id="f-nom" required placeholder="Ex. Aïcha Mbarga"></label>
+        <label for="f-tel">Téléphone / WhatsApp<input id="f-tel" required inputmode="tel" placeholder="6XX XXX XXX"></label>
+      </div>
+      <label for="f-rub">Rubrique
+        <select id="f-rub"><option>Entrepreneuriat</option><option>Innovation</option><option>Opportunités</option><option>Les Bâtisseurs (portrait)</option></select>
+      </label>
+      <label for="f-titre">Titre<input id="f-titre" required placeholder="Ex. Comment nous avons lancé notre agritech à Bafoussam"></label>
+      <label for="f-txt">Votre contenu<textarea id="f-txt" required placeholder="Quelques lignes suffisent. Vous pourrez envoyer photos et documents ensuite."></textarea></label>
+      <p class="err" id="f-err" hidden>Remplissez le nom, le téléphone, le titre et le contenu.</p>
+      <button class="btn btn-o" type="submit">Soumettre pour vérification</button>
+      <div class="ok" id="f-ok" hidden>
+        <b>Proposition prête.</b>
+        <p>Envoyez-la à l'équipe sur WhatsApp pour qu'elle soit relue.</p>
+        <div class="acts"><a class="btn btn-o btn-sm" id="f-wa" target="_blank" rel="noopener" href="#">Envoyer sur WhatsApp</a><button class="btn btn-ghost btn-sm" type="button" id="f-copy">Copier le texte</button></div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand"><img src="assets/logo.jpg" alt="" width="52" height="52"><b>SYNEO</b></div>
+        <p>SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Porteur du programme national PRISME.</p>
+        <div class="social"><a href="https://www.facebook.com/share/1EkRE3H2WD/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/syneo3123" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Accueil</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="prisme.html">PRISME</a></li><li><a href="a-propos.html">Qui sommes-nous</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="contribuer.html">Contribuer</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul>
+          <li>Yaoundé, Biteng — entrée Express Union</li>
+          <li><a href="tel:+237657300479">(+237) 657 300 479</a> · <a href="tel:+237653008768">653 008 768</a></li>
+          <li><a href="mailto:syneo3123@gmail.com">syneo3123@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 SYNEO — La Synergie pour le développement. Tous droits réservés.</span><span>Yaoundé, Cameroun</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/237657300479" target="_blank" rel="noopener" aria-label="Écrire à SYNEO sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg><span>WhatsApp</span></a>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

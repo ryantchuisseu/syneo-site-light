@@ -4,852 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SYNEO — La Synergie pour le développement</title>
-<meta name="description" content="SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Découvrez PRISME, le programme national de réseautage et d'innovation : lancement le 18 novembre 2026 à l'ENSPY, Yaoundé.">
+<meta name="description" content="SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Découvrez PRISME : lancement le 18 novembre 2026 à l'ENSPY, Yaoundé.">
 <meta name="theme-color" content="#1B3B6E">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SYNEO — La Synergie pour le développement">
-<meta property="og:description" content="Connecter les talents, construire le développement. PRISME : conférence inaugurale le 18 novembre 2026 à l'ENSPY, Yaoundé.">
-<meta property="og:image" content="film-poster.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Découvrez PRISME : lancement le 18 novembre 2026 à l'ENSPY, Yaoundé.">
+<meta property="og:image" content="assets/film-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@500&display=swap">
-<style>
-/* SYNEO — version légère : même contenu et même charte, sans aucune animation ni canvas. */
-:root{
-  --navy:#1B3B6E; --orange:#F2701E; --hot:#C9500A; --gold:#F2A93B; --deep:#0E1527;
-  --bg:#F7F5F1; --surface:#FFFFFF; --ink:#13213B; --muted:#5A6782; --line:#DCE2EE;
-  --navy-soft:#E6ECF6; --orange-soft:#FDEBDD; --link:#1B3B6E; --hl2:#D9560A; --tb-card:#F3EADB;
-  --f1:#F2701E; --f2:#E2A21B; --f3:#2E9C8A; --f4:#3D78C9; --f5:#7B5BC2;
-  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
-  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --r:14px; --max:1180px;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0D1526; --surface:#152039; --ink:#E9EEF7; --muted:#9AA7C0; --line:#26345A;
-  --navy-soft:#1C2B4D; --orange-soft:#3A2416; --link:#9DBBEA; --hot:#FF8F45; --hl2:#FF8A3D; --tb-card:#1C2741; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0D1526; --surface:#152039; --ink:#E9EEF7; --muted:#9AA7C0; --line:#26345A;
-  --navy-soft:#1C2B4D; --orange-soft:#3A2416; --link:#9DBBEA; --hot:#FF8F45; --hl2:#FF8A3D; --tb-card:#1C2741; color-scheme:dark}
-
-/* Aucune animation, aucune transition */
-*,*::before,*::after{box-sizing:border-box;animation:none!important;transition:none!important}
-html{scroll-behavior:auto}
-[hidden]{display:none!important}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body)}
-img,svg,video{max-width:100%}
-a{color:var(--link)}
-h1,h2,h3,h4{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
-p{margin:0}
-.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.label{font:500 12px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
-section{padding-block:88px;scroll-margin-top:72px}
-@media (max-width:700px){section{padding-block:60px}}
-
-/* Boutons */
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 15px var(--body);padding:11px 18px;border-radius:999px;text-decoration:none}
-.btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:var(--hot)}
-.btn-n{background:var(--navy);color:#fff}
-.btn-g{background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
-
-/* Bandeau « Bientôt » */
-.soon{background:var(--navy);color:#fff;font-size:13px}
-.soon .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding-block:8px}
-.soon .tag{background:var(--orange);color:#fff;padding:3px 9px;border-radius:999px;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.soon .cd{margin-left:auto;font:500 12px var(--mono)}
-
-/* En-tête */
-header.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:28px;min-height:64px;position:relative}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;flex:none}
-.brand img{width:34px;height:34px;border-radius:9px;background:#fff;object-fit:contain}
-.brand .name{font:800 21px/1 var(--display);letter-spacing:-.02em}
-.brand .name span{color:var(--link)}.brand .name b{color:var(--orange)}
-nav.rub{margin-left:auto}
-nav.rub ul{list-style:none;margin:0;padding:0;display:flex;gap:6px}
-nav.rub a{display:block;padding:6px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
-nav.rub a:hover{color:var(--ink)}
-nav.rub a.on{color:var(--ink);background:var(--navy-soft)}
-.cta{flex:none}
-.menu{display:none;flex:none;border:0;background:var(--ink);color:var(--bg);border-radius:999px;padding:9px 14px;font:600 14px var(--body);cursor:pointer}
-@media (max-width:1000px){
-  .cta{display:none}
-}
-@media (max-width:820px){
-  .menu{display:block;margin-left:auto}
-  nav.rub{display:none;position:absolute;top:100%;left:0;right:0;margin:0;background:var(--surface);border-bottom:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-left,0px)) 16px}
-  nav.rub.open{display:block}
-  nav.rub ul{flex-direction:column;gap:2px}
-  nav.rub a{padding:12px;border-radius:10px;font-size:16px}
-}
-
-/* Titres éditoriaux */
-.ed-head{text-align:center;display:grid;justify-items:center;gap:16px;margin:0 auto 52px;max-width:920px}
-.ed-eye{display:inline-flex;align-items:center;gap:10px;color:var(--muted)}
-.ed-eye::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
-.ed-head h2{font:600 clamp(34px,5.4vw,70px)/1 var(--display);letter-spacing:-.045em;color:var(--ink)}
-.ed-head h2 em,.it{font:italic 400 1.06em/1 var(--serif);letter-spacing:-.01em;color:var(--orange)}
-.ed-lead{color:var(--muted);font-size:17px;max-width:54ch}
-.ed-dark h2{color:#fff}.ed-dark h2 em{color:var(--gold)}
-.ed-left{text-align:left;justify-items:start;margin:10px 0 18px}
-.lead{color:var(--muted);max-width:64ch;font-size:17px}
-
-/* Accueil */
-.hx{padding-block:56px 0;text-align:center}
-.hx h1{font:600 clamp(34px,5.3vw,64px)/1.04 var(--display);letter-spacing:-.035em}
-.hx h1 .l1{color:var(--link)}
-.hx h1 .l2{display:block;color:var(--hl2);font:italic 400 1.04em/1.04 var(--serif);letter-spacing:-.01em}
-.hx-copy{max-width:780px;margin:0 auto;display:grid;gap:20px;justify-items:center}
-.hx-copy p{color:var(--muted);max-width:58ch;font-size:17px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.hx-art{display:block;width:min(420px,80%);height:auto;margin:36px auto 0}
-.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;padding-bottom:64px}
-.stat{border-top:1px solid var(--line);padding-top:14px;min-width:0}
-.stat b{display:block;font:400 clamp(28px,3.6vw,46px)/1 var(--serif);font-variant-numeric:tabular-nums}
-.stat span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
-
-/* Film : simple lecteur, rien ne se charge avant le clic */
-.film{padding-block:0 72px}
-.film .label{display:flex;justify-content:center;align-items:center;gap:10px;color:var(--muted);margin-bottom:14px}
-.film .label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
-.film video{display:block;width:100%;max-width:860px;margin:0 auto;aspect-ratio:16/9;border-radius:18px;background:#0B1222}
-
-/* À la une */
-.une{background:var(--surface);border-block:1px solid var(--line)}
-.une-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
-.hero{background:var(--navy);color:#fff;border-radius:var(--r);padding:30px 28px;display:grid;gap:14px;align-content:start}
-.hero .big{font:400 clamp(72px,9vw,120px)/.85 var(--serif)}
-.hero .y{font:500 13px var(--mono);letter-spacing:.08em;color:#C9D5EA;text-transform:uppercase;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.16)}
-.hero .tag{color:#FFB27D}
-.hero h3{font-size:clamp(24px,2.8vw,32px);font-weight:800}
-.hero p{color:#C9D5EA;max-width:58ch}
-.hero .meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:#DCE5F4}
-.hero .meta b{color:#fff}
-.hero .actions{justify-content:flex-start}
-.hero .btn-g{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
-.side{display:grid;gap:14px}
-.mini{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px;color:inherit;text-decoration:none}
-.mini:hover{border-color:var(--orange)}
-.mini .fig{border-radius:12px;display:grid;place-items:center;text-align:center;font:800 22px/1 var(--display);padding:14px 4px;background:var(--navy-soft);color:var(--link)}
-.mini.warm .fig{background:var(--orange-soft);color:var(--hot)}
-.mini .fig small{display:block;font:500 10px var(--mono);letter-spacing:.06em;margin-top:6px;text-transform:uppercase}
-.mini .cat{color:var(--hot)}
-.mini h4{font-size:16px;margin:4px 0}
-.mini p{font-size:14px;color:var(--muted)}
-@media (max-width:900px){.une-grid{grid-template-columns:1fr}}
-
-/* La tribune */
-.tb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tb-card{display:grid;gap:12px;align-content:start;padding:24px;border-radius:20px;background:var(--tb-card);color:var(--ink);text-decoration:none}
-.tb-card.hot{background:var(--orange);color:#fff}
-.tb-card h3{font:600 clamp(22px,2.2vw,28px)/1.05 var(--display);letter-spacing:-.03em}
-.tb-card p{font-size:15px;color:var(--muted)}
-.tb-card.hot p{color:#FFE8D8}
-.tb-card .go{font:600 14px var(--body);color:var(--hot)}
-.tb-card.hot .go{color:#fff}
-@media (max-width:900px){.tb-grid{grid-template-columns:1fr}}
-
-/* Bâtir ensemble */
-.bat{text-align:center}
-.qs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:760px;margin:22px auto 0}
-.qs span{font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 13px}
-.qline{font:600 clamp(22px,2.8vw,36px)/1.15 var(--display);letter-spacing:-.03em}
-.big2{font:600 clamp(52px,10vw,130px)/.92 var(--display);letter-spacing:-.05em;margin-top:64px}
-.big2 b{color:var(--orange)}
-.tiles{display:inline-flex;gap:8px;vertical-align:middle;margin-left:10px}
-.tiles i{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;font-style:normal;color:#fff;width:clamp(40px,6vw,84px);height:clamp(46px,7vw,96px);border-radius:10px;display:flex;align-items:flex-end;padding:8px}
-.bat .txt{font:500 clamp(18px,1.6vw,22px)/1.5 var(--display);max-width:42ch;margin:26px auto 0}
-.bat .lnk{display:inline-block;margin-top:18px;font:600 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:4px}
-.stats5{display:grid;grid-template-columns:1.2fr repeat(5,1fr);gap:20px;align-items:end;margin-top:64px;text-align:left}
-.stats5 b{display:block;font:400 clamp(28px,3.2vw,44px)/1 var(--serif);white-space:nowrap}
-.stats5 span{display:block;font:500 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.cap{font-size:14px;color:var(--muted)}
-@media (max-width:900px){.stats5{grid-template-columns:repeat(3,1fr)}.stats5 .cap{grid-column:1/-1}}
-@media (max-width:480px){.stats5{grid-template-columns:1fr 1fr}}
-.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;margin-top:20px;color:var(--muted);font:600 15px var(--display)}
-
-/* Flash (statique) */
-.flash{background:var(--surface);border-block:1px solid var(--line);padding-block:0}
-.flash .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding-block:12px;font-size:14px;font-weight:600}
-.flash .label{background:var(--navy);color:#fff;padding:5px 10px;border-radius:6px}
-.flash span:not(.label)::before{content:"● ";color:var(--orange);font-size:10px;vertical-align:2px}
-
-/* Actualités */
-.rub4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.rcard{padding:20px;border-radius:16px;background:var(--surface);border:1px solid var(--line);display:grid;gap:10px;align-content:start}
-.rcard .n{font:800 52px/.85 var(--display);letter-spacing:-.06em;color:var(--c)}
-.rcard h3{font-size:22px;letter-spacing:-.02em}
-.rcard ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.rcard li{display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--muted)}
-.rcard li::before{content:"";width:7px;height:7px;flex:none;background:var(--c)}
-.rubs{display:grid;grid-template-columns:repeat(4,1fr);gap:36px}
-.rubcol{min-width:0}
-.rubcol h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:12px}
-.rubcol h3 span{color:var(--orange)}
-.art{display:grid;gap:8px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
-.art h4{font:600 18px/1.25 var(--display);letter-spacing:-.01em}
-.art:hover h4{color:var(--hot)}
-.art p{font-size:14px;color:var(--muted)}
-.by{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;font:500 12px var(--mono);color:var(--muted)}
-.by b{font:600 13px var(--body);color:var(--ink)}
-.by svg{width:22px;height:22px;flex:none}
-@media (max-width:980px){.rub4,.rubs{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.rub4,.rubs{grid-template-columns:1fr}}
-
-/* PRISME */
-.prisme-band{background:var(--navy);color:#fff}
-.prisme-band .acr{font:500 14px var(--mono);color:#FFB27D;margin-bottom:8px;letter-spacing:.04em;text-align:center}
-.prisme-band .lead{color:#C9D5EA;text-align:center;margin-inline:auto}
-.timeline{display:grid;grid-template-columns:repeat(7,1fr);margin-top:52px}
-.step{border-top:1px solid rgba(255,255,255,.22);padding:20px 16px 0 0;min-width:0}
-.step .n{font:400 46px/1 var(--serif);color:#fff}
-.step .when{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#AFC0DD;margin:10px 0 6px}
-.step h3{font-size:16px;margin-bottom:6px}
-.step p{font-size:13px;color:#C9D5EA}
-.step.now{border-top:3px solid var(--orange)}
-.step.now .n{color:var(--orange)}.step.now .when{color:#FFB27D}
-@media (max-width:1050px){.timeline{grid-template-columns:repeat(4,1fr);row-gap:28px}}
-@media (max-width:640px){.timeline{grid-template-columns:1fr 1fr}}
-.quote{margin:56px auto 0;font:700 clamp(20px,2.4vw,26px)/1.3 var(--display);max-width:40ch;text-align:center}
-.quote span{color:var(--orange)}
-.filieres{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 22px}
-.fil{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
-.fil i,.talk .f i{width:10px;height:10px;border-radius:50%;flex:none}
-.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
-.tab{flex:none;text-align:left;cursor:pointer;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font:600 14px var(--body)}
-.tab small{display:block;font:500 11px var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
-.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-.tab[aria-selected="true"] small{color:#FFB27D}
-.panel{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.panel .cat{color:var(--hot)}
-.panel h3{font-size:clamp(20px,2.4vw,26px);margin:6px 0 8px}
-.panel .goal{color:var(--muted);max-width:70ch}
-.panel .campus{display:inline-flex;margin-top:12px;font-weight:600;font-size:14px;background:var(--orange-soft);color:var(--hot);padding:6px 12px;border-radius:8px}
-.talks{margin-top:20px}
-.talk{display:grid;grid-template-columns:190px 1fr 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
-.talk .f{display:flex;gap:8px;align-items:center;font-weight:700;font-size:14px}
-.talk .t{font-weight:600}
-.talk .o{font-size:14px;color:var(--muted)}
-.talk .o::before{content:"Opportunité · ";font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--hot)}
-@media (max-width:820px){.talk{grid-template-columns:1fr;gap:6px}}
-
-/* Qui sommes-nous */
-.dk{background:var(--deep);color:#E8EDF6}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#9FB0CD}
-.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
-.dk-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
-.dk-art svg{width:100%;height:auto;display:block;margin-top:18px}
-.signed{display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.faces{display:flex}
-.faces i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 11px var(--body);font-style:normal;color:#fff;border:2px solid var(--deep);margin-left:-8px}
-.faces i:first-child{margin-left:0;background:var(--navy)}.faces i:nth-child(2){background:var(--orange)}.faces i:nth-child(3){background:#3D78C9}
-.signed b{display:block;font-size:14px}.signed small{color:#93A0BA;font-size:13px}
-.manif{font:500 clamp(21px,2.5vw,30px)/1.35 var(--display);letter-spacing:-.015em;max-width:32ch}
-.manif em{font-style:normal;color:var(--gold)}
-.dk-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-.dk-3 .n{font:500 12px var(--mono);color:#93A0BA}
-.dk-3 h3{font-size:18px;margin:10px 0 6px;color:#fff}
-.dk-3 p{font-size:14px;color:#93A0BA}
-.dk-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(255,255,255,.12)}
-.dk-stats div{padding:22px 18px 0;border-left:1px solid rgba(255,255,255,.12);min-width:0}
-.dk-stats div:first-child{border-left:0;padding-left:0}
-.dk-stats b{display:block;font:400 clamp(38px,4.6vw,58px)/1 var(--serif);color:#fff}
-.dk-stats div:nth-child(2) b{color:var(--gold)}
-.dk-stats span{display:block;font-size:13px;color:#93A0BA;margin-top:10px}
-.dk-vals{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:34px;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#C9D5EA}
-.dk-vals span::before{content:"+ ";color:var(--orange)}
-@media (max-width:900px){.dk-grid{grid-template-columns:1fr;gap:16px}.dk-art{max-width:420px}.dk-stats{grid-template-columns:1fr 1fr;row-gap:24px}.dk-stats div:nth-child(3){border-left:0;padding-left:0}}
-@media (max-width:560px){.dk-3{grid-template-columns:1fr}}
-.team{display:grid;grid-template-columns:repeat(5,1fr);gap:32px 20px;text-align:center}
-.av{width:92px;height:92px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font:800 26px var(--display);color:#fff;background:var(--navy)}
-.mem:nth-child(even) .av{background:var(--orange)}
-.mem b{display:block;font:700 17px/1.25 var(--display)}
-.mem span{font-size:14px;color:var(--muted)}
-@media (max-width:900px){.team{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:560px){.team{grid-template-columns:1fr 1fr}}
-
-/* Partenaires */
-.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.pgrp{border-top:1px solid var(--ink);padding-top:18px}
-.pgrp h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.pgrp ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font:600 17px/1.3 var(--display)}
-@media (max-width:860px){.partners{grid-template-columns:1fr;gap:28px}}
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);margin-top:8px}
-.tier{border-top:1px solid var(--line);padding:24px 24px 0 0;display:grid;gap:10px;align-content:start}
-.tier.top{border-top:3px solid var(--orange)}
-.tier h3{font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.tier .amt{font:400 clamp(42px,4.6vw,58px)/1 var(--serif)}
-.tier.top .amt{color:var(--orange)}
-.tier .amt small{font:500 12px var(--mono);color:var(--muted);margin-left:4px}
-.tier ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);display:grid;gap:4px}
-@media (max-width:980px){.tiers{grid-template-columns:repeat(2,1fr);row-gap:32px}}
-@media (max-width:520px){.tiers{grid-template-columns:1fr}}
-
-/* Contribuer */
-.contrib{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}
-.contrib .cat{color:var(--hot)}
-.steps3{display:grid;gap:12px;margin-top:22px}
-.s3{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:center}
-.s3 b{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff;font:800 16px var(--display)}
-.s3 p{font-size:15px;color:var(--muted)}.s3 strong{color:var(--ink)}
-.say{display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:center;margin-top:22px}
-.say svg{width:60px;height:60px}
-.say p{background:var(--orange-soft);border-radius:16px 16px 16px 4px;padding:12px 16px;font-weight:600}
-form.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-label{display:grid;gap:6px;font-weight:600;font-size:14px}
-input,select,textarea{font:400 15px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange)}
-textarea{min-height:120px;resize:vertical}
-.hint{font-size:13px;color:var(--muted)}
-.ok{background:var(--navy-soft);border-radius:12px;padding:16px;display:grid;gap:10px}
-.ok b{font-family:var(--display);font-size:17px}
-.ok .acts{display:flex;gap:8px;flex-wrap:wrap}
-@media (max-width:860px){.contrib{grid-template-columns:1fr}}
-@media (max-width:520px){.grid2{grid-template-columns:1fr}}
-
-/* Contact */
-.ct{background:#070B16;color:#E8EDF6}
-.ct-grid{display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:40px;align-items:center}
-.ct-form{display:grid;gap:24px}
-.ct h2{font:600 clamp(26px,3.2vw,38px)/1.18 var(--display);letter-spacing:-.02em;color:#fff}
-.ct form{display:grid;gap:20px}
-.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.ct label{color:#9FB0CD;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.ct input,.ct textarea{background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.22);border-radius:0;color:#fff;padding:10px 0;font:400 16px var(--body);text-transform:none;letter-spacing:0}
-.ct input::placeholder,.ct textarea::placeholder{color:rgba(232,237,246,.4)}
-.ct input:focus,.ct textarea:focus{border-bottom-color:var(--orange)}
-.ct textarea{min-height:90px}
-.ct-btn{justify-self:start;background:#fff;color:#0B1222}
-.ct #c-wa{justify-self:start}
-.ct-err{font-size:13px;color:#FFB27D}
-.ct-info{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-.ct-info .label{color:#7F8DA8;font-size:11px}
-.ct-info p{font-size:14px;margin-top:4px;overflow-wrap:anywhere}
-.ct-info a{color:#fff}
-.copy{margin-top:4px;font:600 13px var(--body);background:none;border:0;color:#FFB27D;cursor:pointer;padding:0;text-decoration:underline}
-.ct-art{width:100%;max-width:360px;height:auto;justify-self:center}
-@media (max-width:860px){.ct-grid{grid-template-columns:1fr}.ct-art{max-width:220px}}
-@media (max-width:520px){.ct-row,.ct-info{grid-template-columns:1fr}}
-
-/* Pied de page */
-footer{background:var(--navy);color:#C9D5EA;font-size:14px}
-.ft{display:grid;grid-template-columns:auto 1fr auto;gap:18px 40px;align-items:center;padding-block:26px}
-.ft-brand{display:grid;gap:2px}
-.ft-brand b{color:#fff;font:700 18px var(--display)}
-.ft-nav{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center}
-.ft-nav a{color:#C9D5EA;text-decoration:none;font-weight:600}
-.ft-nav a:hover,.ft-nav a.on{color:#fff}
-@media (max-width:900px){.ft{grid-template-columns:1fr;padding-bottom:96px}.ft-nav{justify-content:flex-start}}
-
-/* Bouton WhatsApp fixe (sans bulle animée) */
-.wa{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 0 0 3px var(--surface),0 6px 18px rgba(0,0,0,.22)}
-.wa svg.av-i{width:58px;height:58px;display:block}
-.wa .b{position:absolute;right:-2px;bottom:-2px;width:22px;height:22px;border-radius:50%;background:#25D366;border:2px solid var(--surface);display:grid;place-items:center}
-.wa .b svg{width:12px;height:12px;fill:#fff}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="soon">
+<div class="topbar">
   <div class="wrap">
-    <span class="tag">Bientôt</span>
-    <span>Lancement officiel de <b>PRISME</b> · 18 nov. 2026 · ENSPY, Yaoundé</span>
-    <span class="cd" id="cd">J-12</span>
+    <span class="ev"><b>PRISME</b> — Conférence inaugurale · 18 novembre 2026 · ENSPY, Yaoundé</span>
+    <div class="cd" id="cd" aria-label="Temps restant avant la conférence"><span><b id="cd-j">–</b>Jours</span><span><b id="cd-h">–</b>Heures</span><span><b id="cd-m">–</b>Min</span></div>
+    <a class="btn btn-o btn-sm" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire</a>
   </div>
 </div>
 
-<header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="#accueil" aria-label="SYNEO, retour à l'accueil">
-      <img src="logo.jpg" alt="" width="34" height="34">
-      <span class="name"><span>SYN</span><b>EO</b></span>
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="SYNEO, accueil">
+      <img src="assets/logo.jpg" alt="" width="48" height="48">
+      <span><b>SYN<i>EO</i></b><small>La Synergie pour le développement</small></span>
     </a>
-    <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav class="rub" id="nav" aria-label="Menu principal">
-      <ul>
-        <li><a href="#actualites">Actualités</a></li>
-        <li><a href="#programme">PRISME</a></li>
-        <li><a href="#a-propos">Qui sommes-nous</a></li>
-        <li><a href="#partenaires">Partenaires</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-n cta" href="#contribuer">Proposer un contenu →</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Menu principal"><ul><li><a href="index.html" aria-current="page">Accueil</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="prisme.html">PRISME</a></li><li><a href="a-propos.html">Qui sommes-nous</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="contribuer.html">Contribuer</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="btn btn-o btn-sm cta" href="contribuer.html">Proposer un contenu</a>
   </div>
 </header>
 
 <main>
-<!-- ===================== ACCUEIL ===================== -->
-<section id="accueil" class="hx">
+<section class="hero">
   <div class="wrap">
-    <div class="hx-copy">
-      <h1><span class="l1">Connecter les talents.</span> <span class="l2">Construire le développement.</span></h1>
-      <p>SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Avec PRISME, nous relions universités, entreprises et institutions pour faire émerger les solutions de demain.</p>
-      <div class="actions">
-        <a class="btn btn-n" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire au lancement de PRISME</a>
-        <a class="btn btn-g" href="#programme">Découvrir le programme</a>
-      </div>
-    </div>
-    <!-- Prisme doré : image fixe en SVG (remplace l'animation 3D) -->
-    <svg class="hx-art" viewBox="0 0 420 250" role="img" aria-label="Prisme doré">
-      <defs>
-        <linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD678"/><stop offset="1" stop-color="#F5B03E"/></linearGradient>
-        <linearGradient id="pr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5B03E"/><stop offset="1" stop-color="#EC6016"/></linearGradient>
-        <radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#F5A032" stop-opacity=".45"/><stop offset="1" stop-color="#F5A032" stop-opacity="0"/></radialGradient>
-      </defs>
-      <ellipse cx="210" cy="232" rx="190" ry="18" fill="url(#gl)"/>
-      <path d="M210 14 L90 226 L232 236 Z" fill="url(#pl)"/>
-      <path d="M210 14 L232 236 L336 214 Z" fill="url(#pr)"/>
-      <path d="M210 14 L90 226 L232 236 L336 214 Z" fill="none" stroke="#FFE4A0" stroke-width="1.5" stroke-linejoin="round"/>
-      <line x1="210" y1="14" x2="232" y2="236" stroke="#FFE4A0" stroke-width="1.5"/>
-    </svg>
-    <div class="stats3">
-      <div class="stat"><b>18.11</b><span>Lancement de PRISME à l'ENSPY, 11h – 15h</span></div>
-      <div class="stat"><b>6 campus</b><span>Conférences itinérantes en 2027</span></div>
-      <div class="stat"><b>40–60</b><span>Porteurs de projets incubés</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="film" class="film" aria-label="Le film SYNEO">
-  <div class="wrap">
-    <p class="label">Le film SYNEO · 25 s</p>
-    <video src="film.mp4" poster="film-poster.jpg" controls playsinline preload="none"></video>
-  </div>
-</section>
-
-<section id="une" class="une">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">À la une</span><h2>L'essentiel, <em>en un coup d'œil.</em></h2></div>
-    <div class="une-grid">
-      <article class="hero">
-        <span class="label tag">Conférence inaugurale</span>
-        <b class="big">18.11</b>
-        <span class="y">2026 · 11h – 15h · ENSPY, Yaoundé</span>
-        <span class="label tag">À la une · Événement</span>
-        <h3>PRISME : une plateforme nationale pour faire émerger les solutions de demain</h3>
-        <p>Conférences, incubation, série documentaire et Forum National : 13 mois pour connecter les jeunes talents de l'Ingénierie Logicielle et de l'Intelligence Artificielle à tout l'écosystème entrepreneurial camerounais.</p>
-        <div class="meta"><span>Date : <b>18 novembre 2026, 11h00 – 15h00</b></span><span>Lieu : <b>ENSPY, Yaoundé</b></span><span>Public : <b>500 à 1 000 participants</b></span></div>
-        <div class="actions">
-          <a class="btn btn-o" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire sur WhatsApp</a>
-          <a class="btn btn-g" href="#programme">Découvrir le programme</a>
-        </div>
-      </article>
-      <div class="side">
-        <a class="mini" href="#rubriques"><div class="fig">60 000<small>Spécialistes IA</small></div><div><span class="label cat">Opportunités</span><h4>SNIA : le Cameroun vise 60 000 spécialistes IA d'ici 2040</h4><p>Dont 40 % de femmes. Ce que la stratégie change pour les jeunes.</p></div></a>
-        <a class="mini warm" href="#rubriques"><div class="fig">27,7 %<small>Survie à 5 ans</small></div><div><span class="label cat">Entrepreneuriat</span><h4>Pourquoi 7 entreprises sur 10 ne passent pas le cap des 5 ans</h4><p>Le constat qui a fait naître PRISME (CAMERCAP-PARC).</p></div></a>
-        <a class="mini warm" href="#rubriques"><div class="fig">207<small>Start-up IA</small></div><div><span class="label cat">Innovation</span><h4>Start-up IA africaines : 86 % de survie en 2025</h4><p>17 pays, un doublement en trois ans.</p></div></a>
-        <a class="mini" href="#rubriques"><div class="fig">24<small>Épisodes</small></div><div><span class="label cat">Les Bâtisseurs</span><h4>La série documentaire de PRISME arrive sur la CRTV</h4><p>Premier tournage le jour de la conférence inaugurale.</p></div></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="tribune">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">La tribune</span><h2>La parole <em>aux bâtisseurs.</em></h2><p class="ed-lead">Trois façons de prendre la parole. Les membres publient, l'équipe SYNEO relit et vérifie chaque contenu avant la mise en ligne.</p></div>
-    <div class="tb-grid">
-      <a class="tb-card" href="#contribuer"><h3>Raconte ton parcours</h3><p>Porteur de projet ? Partage tes réussites, tes galères et ce que tu as appris en chemin.</p><span class="go">Proposer →</span></a>
-      <a class="tb-card hot" href="#contribuer"><h3>Partage ton expertise</h3><p>Développeur, chercheur, mentor ? Publie une analyse ou un tutoriel pour celles et ceux qui démarrent.</p><span class="go">Proposer →</span></a>
-      <a class="tb-card" href="#contribuer"><h3>Fais grandir le réseau</h3><p>Une rencontre, une offre de stage, un appel à projets ? Propose-le à toute la communauté.</p><span class="go">Proposer →</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="impact" class="bat">
-  <div class="wrap">
-    <p class="qline">Trop de questions qui dispersent <span class="it">les jeunes porteurs de projet.</span></p>
-    <div class="qs" aria-label="Questions des porteurs de projet"><span>Où trouver un mentor ?</span><span>Comment financer mon projet ?</span><span>Qui peut me former à l'IA ?</span><span>Avec qui m'associer ?</span><span>Quel marché viser ?</span><span>Mon idée est-elle viable ?</span><span>Quel statut juridique ?</span><span>Où rencontrer des investisseurs ?</span><span>Comment structurer mon équipe ?</span><span>Comment tenir 5 ans ?</span></div>
-    <h2 class="big2">Bâtir<span class="tiles" aria-hidden="true"><i style="background:#F2701E">IA</i><i style="background:#2E9C8A">Cyber</i><i style="background:#3D78C9">Data</i></span><br>ensemble<b>.</b></h2>
-    <p class="txt">SYNEO relie les talents, les écoles, les entreprises et les institutions. Chaque filière est une spécialisation. Chaque conférence est une étape. Ensemble, elles forment une chaîne de valeur entrepreneuriale.</p>
-    <a class="lnk" href="#conferences">Voir les conférences →</a>
-    <div class="stats5">
-      <p class="cap">Ce que PRISME met en mouvement.</p>
-      <div><b>30</b><span>Présentations</span></div>
-      <div><b>6</b><span>Campus hôtes</span></div>
-      <div><b>24</b><span>Épisodes documentaires</span></div>
-      <div><b>40–60</b><span>Projets incubés</span></div>
-      <div><b>13 mois</b><span>De programme</span></div>
-    </div>
-    <p class="cap" style="margin-top:56px">Ils construisent PRISME avec nous</p>
-    <div class="logos"><span>MINPOSTEL</span><span>ENSPY</span><span>ESSTIC</span><span>Chaire UNESCO Accès TIC</span><span>AgroPole</span><span>Néo Industry</span><span>Bass Technology</span><span>IAC</span><span>MY LAB Production</span><span>CAMIGRA</span><span>TIIANA</span><span>MINESUP</span></div>
-  </div>
-</section>
-
-<section id="flash" class="flash" aria-label="Flash info">
-  <div class="wrap">
-    <span class="label">Flash</span>
-    <span>Inscriptions ouvertes pour la conférence inaugurale du 18 novembre</span>
-    <span>Conférences thématiques itinérantes : 6 campus de janvier à juin 2027</span>
-  </div>
-</section>
-
-<!-- ===================== ACTUALITÉS ===================== -->
-<section id="roue" aria-label="Les 4 rubriques de SYNEO">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">Actualités · 4 rubriques</span><h2>Quatre rubriques, <em>un seul fil.</em></h2></div>
-    <div class="rub4">
-      <a class="rcard" href="#rubriques" style="--c:#F2701E;text-decoration:none;color:inherit"><span class="n">01</span><h3>Entrepreneuriat</h3><ul><li>Modèles d'affaires et proposition de valeur</li><li>Structurer et faire grandir son équipe</li><li>Retours d'expérience de fondateurs</li></ul></a>
-      <a class="rcard" href="#rubriques" style="--c:#3D78C9;text-decoration:none;color:inherit"><span class="n">02</span><h3>Innovation</h3><ul><li>Tropicaliser la technologie</li><li>IA, données et cybersécurité appliquées</li><li>Cas d'usage camerounais</li></ul></a>
-      <a class="rcard" href="#rubriques" style="--c:#D9940F;text-decoration:none;color:inherit"><span class="n">03</span><h3>Opportunités</h3><ul><li>Appels à projets et concours</li><li>Financements et exonérations</li><li>Formation et incubation PRISME</li></ul></a>
-      <a class="rcard" href="#rubriques" style="--c:#2E9C8A;text-decoration:none;color:inherit"><span class="n">04</span><h3>Les Bâtisseurs</h3><ul><li>Portraits de jeunes entrepreneurs</li><li>Coulisses de la série documentaire</li><li>Votre histoire, publiée après vérification</li></ul></a>
-    </div>
-  </div>
-</section>
-
-<section id="rubriques" style="padding-top:0">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">Actualités</span><h2>Chaque sujet <em>a sa place.</em></h2><p class="ed-lead">Quatre rubriques claires. Rien ne se mélange.</p></div>
-    <div class="rubs">
-      <div class="rubcol">
-        <h3>Entrepreneuriat <span>›</span></h3>
-        <a class="art" href="#"><span class="d">04 nov. 2026</span><h4>Construire son modèle d'affaires : de l'idée à la proposition de valeur</h4><p>Les bases du canevas pour porteurs de projet.</p></a>
-        <a class="art" href="#"><span class="d">28 oct. 2026</span><h4>Spécialisation et coopération : trouver sa place dans la chaîne de valeur</h4></a>
-      </div>
-      <div class="rubcol">
-        <h3>Innovation <span>›</span></h3>
-        <a class="art" href="#"><span class="d">02 nov. 2026</span><h4>Tropicaliser la technologie : concevoir pour le contexte camerounais</h4><p>Passer de consommateur à concepteur de solutions.</p></a>
-        <a class="art" href="#"><span class="d">25 oct. 2026</span><h4>IA appliquée : agriculture de précision et santé au Cameroun</h4></a>
-      </div>
-      <div class="rubcol">
-        <h3>Opportunités <span>›</span></h3>
-        <a class="art" href="#"><span class="d">03 nov. 2026</span><h4>Exonérations de 5 ans pour les jeunes entreprises fintech, agritech et etech</h4><p>Qui est éligible et comment en profiter.</p></a>
-        <a class="art" href="#"><span class="d">20 oct. 2026</span><h4>Panorama des mécanismes de financement de l'écosystème camerounais</h4></a>
-      </div>
-      <div class="rubcol">
-        <h3>Les Bâtisseurs <span>›</span></h3>
-        <a class="art" href="#"><span class="d">Bientôt</span><h4>Série documentaire : portraits de jeunes entrepreneurs du numérique</h4><p>Premier tournage le jour de la conférence inaugurale.</p></a>
-        <a class="art" href="#contribuer"><span class="d">Votre histoire</span><h4>Vous êtes entrepreneur ? Proposez votre portrait à la rédaction</h4></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PRISME ===================== -->
-<section id="prisme" class="prisme-band">
-  <div class="wrap">
-    <p class="acr">Programme de Réseautage et d'Innovation pour la Synergie des Modèles Entrepreneuriaux</p>
-    <div class="ed-head ed-dark" style="margin-bottom:18px"><h2>Le programme <em>PRISME.</em></h2></div>
-    <p class="lead">Première édition consacrée à l'Ingénierie Logicielle et à l'Intelligence Artificielle, alignée sur la Stratégie Nationale d'Intelligence Artificielle. Sept composantes cumulatives, de novembre 2026 à décembre 2027.</p>
-    <div class="timeline">
-      <div class="step now"><div class="n">1</div><div class="when">18 nov. 2026</div><h3>Conférence inaugurale</h3><p>Lancement officiel à l'ENSPY.</p></div>
-      <div class="step"><div class="n">2</div><div class="when">Janv. – juin 2027</div><h3>Conférences thématiques</h3><p>6 rencontres sur 6 campus.</p></div>
-      <div class="step"><div class="n">3</div><div class="when">Juil. – nov. 2027</div><h3>Formation &amp; incubation</h3><p>Cohorte de 40 à 60 projets.</p></div>
-      <div class="step"><div class="n">4</div><div class="when">Toute l'année 2027</div><h3>Série documentaire</h3><p>« Les Bâtisseurs », 24 épisodes.</p></div>
-      <div class="step"><div class="n">5</div><div class="when">En continu</div><h3>Magazines audiovisuels</h3><p>Portraits d'entreprises.</p></div>
-      <div class="step"><div class="n">6</div><div class="when">Fin 2027</div><h3>Film de clôture</h3><p>Talents et résultats.</p></div>
-      <div class="step"><div class="n">7</div><div class="when">Déc. 2027</div><h3>Forum National</h3><p>Salon, B2B, partenariats.</p></div>
-    </div>
-    <p class="quote">Seuls, nous créons des entreprises. <span>Ensemble, nous bâtissons des écosystèmes.</span></p>
-  </div>
-</section>
-
-<section id="conferences">
-  <div class="wrap">
-    <div class="ed-head" style="margin-bottom:28px"><span class="label ed-eye">Conférences thématiques</span><h2>Six campus, <em>six étapes.</em></h2><p class="ed-lead">5 filières × 6 étapes = 30 présentations, de janvier à juin 2027.</p></div>
-    <div class="filieres" id="fils"></div>
-    <div class="tabs" role="tablist" id="tabs"></div>
-    <div class="panel" role="tabpanel" id="panel"></div>
-  </div>
-</section>
-
-<!-- ===================== QUI SOMMES-NOUS ===================== -->
-<section id="apropos" class="dk">
-  <div class="wrap">
-    <div class="dk-grid">
-      <div class="dk-art">
-        <span class="label eyebrow">Qui sommes-nous</span>
-        <svg viewBox="0 0 420 360" aria-hidden="true" fill="none">
-          <g stroke="rgba(255,255,255,.08)"><line x1="210" y1="0" x2="210" y2="360"/><line x1="0" y1="180" x2="420" y2="180"/></g>
-          <circle cx="210" cy="190" r="140" stroke="rgba(255,255,255,.28)"/>
-          <path d="M210 62 L332 260 L88 260 Z" stroke="rgba(255,255,255,.55)"/>
-          <line x1="0" y1="214" x2="152" y2="196" stroke="#fff" stroke-opacity=".8" stroke-width="1.5"/>
-          <g stroke-width="1.5" stroke-opacity=".85">
-            <line x1="268" y1="190" x2="420" y2="150" stroke="#F2701E"/>
-            <line x1="268" y1="190" x2="420" y2="172" stroke="#E2A21B"/>
-            <line x1="268" y1="190" x2="420" y2="194" stroke="#2E9C8A"/>
-            <line x1="268" y1="190" x2="420" y2="216" stroke="#3D78C9"/>
-            <line x1="268" y1="190" x2="420" y2="238" stroke="#7B5BC2"/>
-          </g>
-          <circle cx="210" cy="50" r="5" fill="#F2701E"/>
-        </svg>
-      </div>
-      <div>
-        <div class="signed"><span class="faces"><i>RA</i><i>JB</i><i>BK</i></span><div><b>Signé, l'équipe fondatrice</b><small>10 membres · Yaoundé, Biteng</small></div></div>
-        <p class="manif">Les formations, les incubateurs et les financements se multiplient, mais chacun avance seul. Nous avons créé SYNEO pour <em>les relier</em> : orienter chaque porteur de projet, l'aider à se spécialiser, puis le connecter à ceux qui le complètent.</p>
-        <div class="dk-3">
-          <div><span class="n">01 —</span><h3>Orientation</h3><p>Choisir une direction claire avant de se lancer.</p></div>
-          <div><span class="n">02 —</span><h3>Spécialisation</h3><p>Exceller sur un maillon de la chaîne de valeur.</p></div>
-          <div><span class="n">03 —</span><h3>Complémentarité</h3><p>Se relier aux spécialistes qui nous complètent.</p></div>
-        </div>
-      </div>
-    </div>
-    <div class="dk-stats">
-      <div><b>2026</b><span>Création de SYNEO, le 12 juillet</span></div>
-      <div><b>30</b><span>Présentations sur 6 campus</span></div>
-      <div><b>24</b><span>Épisodes de « Les Bâtisseurs »</span></div>
-      <div><b>13 mois</b><span>De programme, jusqu'au Forum National</span></div>
-    </div>
-    <div class="dk-vals"><span>Synergie</span><span>Coopération</span><span>Coconstruction</span><span>Transmission</span></div>
-  </div>
-</section>
-
-<section id="equipe">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">L'équipe</span><h2>Ceux qui <em>portent SYNEO.</em></h2></div>
-    <div class="team">
-      <div class="mem"><div class="av">RA</div><b>Romuald AYOGO</b><span>Président fondateur</span></div>
-      <div class="mem"><div class="av">MB</div><b>Megane BILEGUE OLEME</b><span>Censeur</span></div>
-      <div class="mem"><div class="av">CE</div><b>Carel ENAMA</b><span>Trésorier</span></div>
-      <div class="mem"><div class="av">JB</div><b>Jérôme BELOBO</b><span>Secrétaire Général</span></div>
-      <div class="mem"><div class="av">BK</div><b>Boris KOUEKAM</b><span>Membre</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PARTENAIRES ===================== -->
-<section id="partenaires" style="background:var(--surface)">
-  <div class="wrap">
-    <div class="ed-head"><span class="label ed-eye">Partenaires</span><h2>Ils sont déjà <em>à nos côtés.</em></h2></div>
-    <div class="partners">
-      <div class="pgrp"><h3>Institutionnels</h3><ul><li>MINPOSTEL</li><li>Ministère de l'Enseignement Supérieur</li><li>ESSTIC</li><li>ENSPY</li></ul></div>
-      <div class="pgrp"><h3>Techniques</h3><ul><li>Chaire UNESCO Accès TIC</li><li>Programme AgroPole</li><li>Néo Industry</li><li>Bass Technology</li><li>IAC</li></ul></div>
-      <div class="pgrp"><h3>Production</h3><ul><li>MY LAB Production</li><li>CAMIGRA</li><li>TIIANA</li></ul></div>
-    </div>
-    <div class="ed-head" style="margin:96px auto 40px"><span class="label ed-eye">Devenir partenaire</span><h2>Une visibilité <em>toute la saison.</em></h2><p class="ed-lead">Renouvelée chaque mois, sur six campus, de novembre 2026 à décembre 2027.</p></div>
-    <div class="tiers">
-      <div class="tier"><h3>Partenaire Réseau</h3><div class="amt">5 M<small>FCFA</small></div><ul><li>Logo sur tous les supports</li><li>Présence réseaux sociaux</li><li>Générique de fin de la série</li><li>Capsule exclusive + invitations VIP</li></ul></div>
-      <div class="tier"><h3>Partenaire Synergie</h3><div class="amt">10 M<small>FCFA</small></div><ul><li>Avantages Réseau</li><li>Stand à 2 conférences + Forum</li><li>Apparition dans un épisode</li></ul></div>
-      <div class="tier"><h3>Partenaire Innovation</h3><div class="amt">20 M<small>FCFA</small></div><ul><li>Avantages Synergie</li><li>Prise de parole en conférence</li><li>Parrainage nommé d'un épisode</li><li>Priorité sur les talents incubés</li></ul></div>
-      <div class="tier top"><h3>Partenaire Écosystème</h3><div class="amt">30 M +<small>FCFA</small></div><ul><li>Avantages Innovation</li><li>Générique d'ouverture de la saison</li><li>Parrainage d'un axe stratégique</li><li>Partenaire fondateur du film de clôture</li></ul></div>
-    </div>
-    <p style="margin-top:28px"><a class="btn btn-n" href="#contact">Recevoir le dossier de sponsoring</a></p>
-  </div>
-</section>
-
-<!-- ===================== CONTRIBUER ===================== -->
-<section id="contribuer">
-  <div class="wrap contrib">
     <div>
-      <span class="label cat">Espace contributeurs</span>
-      <div class="ed-head ed-left"><h2>Publiez <em>sur SYNEO.</em></h2></div>
-      <p class="lead">Entrepreneur, étudiant, mentor : partagez une actualité, une opportunité ou votre parcours. Chaque contenu est relu par l'équipe avant publication.</p>
-      <div class="steps3">
-        <div class="s3"><b>1</b><p><strong>Vous proposez</strong> un sujet dans la bonne rubrique.</p></div>
-        <div class="s3"><b>2</b><p><strong>L'équipe vérifie</strong> les faits et la forme.</p></div>
-        <div class="s3"><b>3</b><p><strong>Le contenu est publié</strong> avec votre nom.</p></div>
+      <h1>Connecter les talents, <span>construire le développement.</span></h1>
+      <p class="lead">SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Avec le programme PRISME, nous relions universités, entreprises et institutions pour faire émerger les solutions de demain.</p>
+      <div class="actions">
+        <a class="btn btn-o" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire au lancement</a>
+        <a class="btn btn-line" href="prisme.html">Découvrir PRISME</a>
       </div>
-      <div class="say"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#av"/></svg><p>Ton histoire peut inspirer d'autres jeunes. Je la relis avec l'équipe et on la publie ensemble.</p></div>
+      <div class="hero-stats">
+        <div><b>6</b><span>Campus</span></div>
+        <div><b>30</b><span>Conférences</span></div>
+        <div><b>40–60</b><span>Projets incubés</span></div>
+        <div><b>13</b><span>Mois de programme</span></div>
+      </div>
     </div>
-    <form class="card" id="form" novalidate>
-      <div class="grid2">
-        <label for="f-nom">Nom complet<input id="f-nom" required placeholder="Ex. Aïcha Mbarga"></label>
-        <label for="f-tel">Téléphone / WhatsApp<input id="f-tel" required inputmode="tel" placeholder="6XX XXX XXX"></label>
-      </div>
-      <label for="f-rub">Rubrique
-        <select id="f-rub"><option>Entrepreneuriat</option><option>Innovation</option><option>Opportunités</option><option>Les Bâtisseurs (portrait)</option></select>
-      </label>
-      <label for="f-titre">Titre<input id="f-titre" required placeholder="Ex. Comment nous avons lancé notre agritech à Bafoussam"></label>
-      <label for="f-txt">Votre contenu<textarea id="f-txt" required placeholder="Quelques lignes suffisent. Vous pourrez envoyer photos et documents ensuite."></textarea></label>
-      <p class="hint" id="f-err" hidden>Remplissez le nom, le téléphone, le titre et le contenu.</p>
-      <button class="btn btn-o" type="submit">Soumettre pour vérification</button>
-      <div class="ok" id="f-ok" hidden>
-        <b>Proposition prête.</b>
-        <p class="hint">Envoyez-la à l'équipe sur WhatsApp pour qu'elle soit relue.</p>
-        <div class="acts"><a class="btn btn-o" id="f-wa" target="_blank" rel="noopener" href="#">Envoyer sur WhatsApp</a><button class="btn btn-g" type="button" id="f-copy">Copier le texte</button></div>
-      </div>
-    </form>
+    <aside class="event">
+      <span class="tag">Prochain événement</span>
+      <div class="date"><b>18</b><span>novembre 2026</span></div>
+      <h2>Conférence inaugurale du programme PRISME</h2>
+      <ul>
+        <li>Horaire : <b>11h00 – 15h00</b></li>
+        <li>Lieu : <b>ENSPY, Yaoundé</b></li>
+        <li>Public : <b>500 à 1 000 participants</b></li>
+      </ul>
+      <a class="btn btn-n" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">Réserver ma place</a>
+    </aside>
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
-<section id="contact" class="ct">
-  <div class="wrap ct-grid">
-    <div class="ct-form">
-      <span class="label eyebrow">Contact</span>
-      <h2>Un projet, une idée, un partenariat ?<br>Parlons-en.</h2>
-      <form id="cform" novalidate>
-        <div class="ct-row">
-          <label for="c-nom">Nom<input id="c-nom" placeholder="Votre nom"></label>
-          <label for="c-tel">Téléphone / WhatsApp<input id="c-tel" inputmode="tel" placeholder="6XX XXX XXX"></label>
-        </div>
-        <label for="c-msg">Votre message<textarea id="c-msg" placeholder="Dites-nous en quelques mots ce que vous cherchez."></textarea></label>
-        <p class="ct-err" id="c-err" hidden>Écrivez au moins votre nom et votre message.</p>
-        <button class="btn ct-btn" type="submit">Préparer le message</button>
-        <a class="btn btn-o" id="c-wa" href="#" target="_blank" rel="noopener" hidden>Envoyer sur WhatsApp</a>
-      </form>
-      <div class="ct-info">
-        <div><span class="label">Adresse</span><p>Yaoundé, Biteng — entrée Express Union</p></div>
-        <div><span class="label">Téléphone</span><p>(+237) 657 300 479 · 653 008 768</p><button class="copy" type="button" data-copy="+237657300479">Copier</button></div>
-        <div><span class="label">E-mail</span><p>syneo3123@gmail.com</p><button class="copy" type="button" data-copy="syneo3123@gmail.com">Copier</button></div>
-        <div><span class="label">Réseaux</span><p><a href="https://www.facebook.com/share/1EkRE3H2WD/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/syneo3123" target="_blank" rel="noopener">Instagram</a></p></div>
-      </div>
+<section class="sec">
+  <div class="wrap split">
+    <div class="txt">
+      <span class="badge">Qui sommes-nous</span>
+      <h2 style="font-size:clamp(28px,3.6vw,40px)">Relier ceux qui construisent l'avenir</h2>
+      <p>Les formations, les incubateurs et les financements se multiplient, mais chacun avance seul. SYNEO a été créée pour les relier : orienter chaque porteur de projet, l'aider à se spécialiser, puis le connecter à ceux qui le complètent.</p>
+      <ul class="checks">
+        <li><div><b>Orientation</b><span>Choisir une direction claire avant de se lancer.</span></div></li>
+        <li><div><b>Spécialisation</b><span>Exceller sur un maillon de la chaîne de valeur.</span></div></li>
+        <li><div><b>Complémentarité</b><span>Se relier aux spécialistes qui nous complètent.</span></div></li>
+      </ul>
+      <p style="margin-top:26px"><a class="btn btn-n" href="a-propos.html">En savoir plus</a></p>
     </div>
-    <!-- Prisme de verre et 5 fils de lumière : image fixe -->
-    <svg class="ct-art" viewBox="0 0 300 420" aria-hidden="true" fill="none">
-      <circle cx="150" cy="90" r="90" fill="#FFE1BE" fill-opacity=".08"/>
-      <g stroke-width="1.6" stroke-linecap="round">
-        <path d="M134 130 C120 220 100 300 70 410" stroke="#F2701E"/>
-        <path d="M142 130 C136 220 128 310 112 410" stroke="#E2A21B"/>
-        <path d="M150 130 C152 220 150 310 152 410" stroke="#2E9C8A"/>
-        <path d="M158 130 C166 220 176 310 194 410" stroke="#3D78C9"/>
-        <path d="M166 130 C182 220 204 300 234 410" stroke="#7B5BC2"/>
-      </g>
-      <path d="M150 30 L96 124 L170 132 Z" fill="#FFECD7" fill-opacity=".22" stroke="#FFF6EB" stroke-width="1.3" stroke-linejoin="round"/>
-      <path d="M150 30 L170 132 L208 118 Z" fill="#FFECD7" fill-opacity=".08" stroke="#FFF6EB" stroke-width="1.3" stroke-linejoin="round"/>
-    </svg>
+    <figure class="figure" style="margin:0">
+      <video src="assets/film.mp4" poster="assets/film-poster.jpg" controls playsinline preload="none"></video>
+      <figcaption>Le film SYNEO · 25 secondes</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec navy">
+  <div class="wrap">
+    <div class="head "><span class="badge">Le programme</span><h2>PRISME en 7 étapes</h2><p>Programme de Réseautage et d'Innovation pour la Synergie des Modèles Entrepreneuriaux, de novembre 2026 à décembre 2027.</p></div>
+    <div class="steps"><div class="step now"><div class="n">1</div><span class="when">18 nov. 2026</span><h3>Conférence inaugurale</h3><p>Lancement officiel à l'ENSPY.</p></div><div class="step"><div class="n">2</div><span class="when">Janv. – juin 2027</span><h3>Conférences thématiques</h3><p>6 rencontres sur 6 campus.</p></div><div class="step"><div class="n">3</div><span class="when">Juil. – nov. 2027</span><h3>Formation & incubation</h3><p>Cohorte de 40 à 60 projets.</p></div><div class="step"><div class="n">4</div><span class="when">Toute l'année 2027</span><h3>Série documentaire</h3><p>« Les Bâtisseurs », 24 épisodes.</p></div><div class="step"><div class="n">5</div><span class="when">En continu</span><h3>Magazines audiovisuels</h3><p>Portraits d'entreprises.</p></div><div class="step"><div class="n">6</div><span class="when">Fin 2027</span><h3>Film de clôture</h3><p>Talents et résultats.</p></div><div class="step"><div class="n">7</div><span class="when">Déc. 2027</span><h3>Forum National</h3><p>Salon, B2B, partenariats.</p></div></div>
+    <div class="more"><a class="btn btn-o" href="prisme.html">Voir le programme complet</a></div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <div class="head "><span class="badge">Actualités</span><h2>Les dernières nouvelles</h2><p>Entrepreneuriat, innovation, opportunités et portraits de bâtisseurs.</p></div>
+    <div class="grid g3"><a class="post c-ent" href="#" data-r="ent"><span class="top"></span><div class="body"><span class="cat">Entrepreneuriat</span><h3>Construire son modèle d'affaires : de l'idée à la proposition de valeur</h3><p>Les bases du canevas pour porteurs de projet.</p><span class="meta"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="100" fill="#1B3B6E"/><g fill="#F2701E" stroke="#F2701E" stroke-linecap="round"><circle cx="103" cy="40" r="16" stroke="none"/><path d="M88 62h30a11 11 0 0 1 11 11v57H77V73a11 11 0 0 1 11-11z" stroke="none"/><path d="M94 126l-1 50M113 126l2 50" stroke-width="17"/><path d="M125 74l9 54M81 74l-21 42" stroke-width="11"/></g></svg>Rédaction SYNEO · 04 nov. 2026</span></div></a><a class="post c-inn" href="#" data-r="inn"><span class="top"></span><div class="body"><span class="cat">Innovation</span><h3>Tropicaliser la technologie : concevoir pour le contexte camerounais</h3><p>Passer de consommateur à concepteur de solutions.</p><span class="meta"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="100" fill="#1B3B6E"/><g fill="#F2701E" stroke="#F2701E" stroke-linecap="round"><circle cx="103" cy="40" r="16" stroke="none"/><path d="M88 62h30a11 11 0 0 1 11 11v57H77V73a11 11 0 0 1 11-11z" stroke="none"/><path d="M94 126l-1 50M113 126l2 50" stroke-width="17"/><path d="M125 74l9 54M81 74l-21 42" stroke-width="11"/></g></svg>Rédaction SYNEO · 02 nov. 2026</span></div></a><a class="post c-opp" href="#" data-r="opp"><span class="top"></span><div class="body"><span class="cat">Opportunités</span><h3>Exonérations de 5 ans pour les jeunes entreprises fintech, agritech et etech</h3><p>Qui est éligible et comment en profiter.</p><span class="meta"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="100" fill="#1B3B6E"/><g fill="#F2701E" stroke="#F2701E" stroke-linecap="round"><circle cx="103" cy="40" r="16" stroke="none"/><path d="M88 62h30a11 11 0 0 1 11 11v57H77V73a11 11 0 0 1 11-11z" stroke="none"/><path d="M94 126l-1 50M113 126l2 50" stroke-width="17"/><path d="M125 74l9 54M81 74l-21 42" stroke-width="11"/></g></svg>Rédaction SYNEO · 03 nov. 2026</span></div></a></div>
+    <div class="more"><a class="btn btn-ghost" href="actualites.html">Toutes les actualités</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head "><span class="badge">Ils nous font confiance</span><h2>Nos partenaires</h2><p>Des institutions, des écoles et des entreprises engagées à nos côtés.</p></div>
+    <div class="grid g4"><div class="partner p-inst"><span class="cat">Institutionnel</span><b>MINPOSTEL</b><span>Ministère des Postes et Télécommunications</span></div><div class="partner p-inst"><span class="cat">Institutionnel</span><b>MINESUP</b><span>Ministère de l'Enseignement Supérieur</span></div><div class="partner p-inst"><span class="cat">Institutionnel</span><b>ESSTIC</b><span>École Supérieure des Sciences et Techniques de l'Information et de la Communication</span></div><div class="partner p-inst"><span class="cat">Institutionnel</span><b>ENSPY</b><span>École Nationale Supérieure Polytechnique de Yaoundé</span></div><div class="partner p-tech"><span class="cat">Technique</span><b>Chaire UNESCO Accès TIC</b><span>Partenaire technique</span></div><div class="partner p-tech"><span class="cat">Technique</span><b>Programme AgroPole</b><span>Partenaire technique</span></div><div class="partner p-tech"><span class="cat">Technique</span><b>Néo Industry</b><span>Partenaire technique</span></div><div class="partner p-tech"><span class="cat">Technique</span><b>Bass Technology</b><span>Partenaire technique</span></div></div>
+    <div class="more"><a class="btn btn-ghost" href="partenaires.html">Tous nos partenaires</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-band">
+      <div><h2>Participez au lancement de PRISME</h2><p>18 novembre 2026, 11h – 15h, à l'ENSPY de Yaoundé. Entrée sur inscription.</p></div>
+      <div class="actions"><a class="btn btn-w" href="https://wa.me/237657300479?text=Bonjour%20SYNEO%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20conf%C3%A9rence%20inaugurale%20PRISME%20du%2018%20novembre." target="_blank" rel="noopener">S'inscrire sur WhatsApp</a></div>
+    </div>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap ft">
-    <div class="ft-brand"><b>SYNEO</b><span>La Synergie pour le développement</span></div>
-    <nav class="ft-nav" aria-label="Pages du site"><a href="#accueil">Accueil</a><a href="#actualites">Actualités</a><a href="#programme">PRISME</a><a href="#a-propos">Qui sommes-nous</a><a href="#partenaires">Partenaires</a><a href="#contribuer">Contribuer</a><a href="#contact">Contact</a></nav>
-    <span>© 2026 SYNEO · Yaoundé, Cameroun</span>
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brand"><img src="assets/logo.jpg" alt="" width="52" height="52"><b>SYNEO</b></div>
+        <p>SYNEO forme, informe et met en réseau les porteurs de projets et les jeunes entrepreneurs. Porteur du programme national PRISME.</p>
+        <div class="social"><a href="https://www.facebook.com/share/1EkRE3H2WD/" target="_blank" rel="noopener">Facebook</a><a href="https://www.instagram.com/syneo3123" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Accueil</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="prisme.html">PRISME</a></li><li><a href="a-propos.html">Qui sommes-nous</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="contribuer.html">Contribuer</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Contactez-nous</h4>
+        <ul>
+          <li>Yaoundé, Biteng — entrée Express Union</li>
+          <li><a href="tel:+237657300479">(+237) 657 300 479</a> · <a href="tel:+237653008768">653 008 768</a></li>
+          <li><a href="mailto:syneo3123@gmail.com">syneo3123@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 SYNEO — La Synergie pour le développement. Tous droits réservés.</span><span>Yaoundé, Cameroun</span></div>
   </div>
 </footer>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="av" viewBox="0 0 200 200">
-    <circle cx="100" cy="100" r="100" fill="#1B3B6E"/>
-    <g fill="#F2701E" stroke="#F2701E" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="103" cy="40" r="16" stroke="none"/>
-      <path d="M88 62 h30 a11 11 0 0 1 11 11 v57 h-52 v-57 a11 11 0 0 1 11-11z" stroke="none"/>
-      <line x1="94" y1="126" x2="93" y2="176" stroke-width="17"/>
-      <line x1="113" y1="126" x2="115" y2="176" stroke-width="17"/>
-      <line x1="125" y1="74" x2="134" y2="128" stroke-width="11"/>
-      <line x1="81" y1="74" x2="60" y2="116" stroke-width="11"/>
-    </g>
-  </symbol>
-</svg>
-
-<a class="wa" href="https://wa.me/237657300479" target="_blank" rel="noopener" aria-label="Écrire à SYNEO sur WhatsApp"><svg class="av-i" viewBox="0 0 200 200" aria-hidden="true"><use href="#av"/></svg><span class="b"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg></span></a>
-
-<script>
-/* Version légère : uniquement le strict nécessaire (pages, menu, onglets, formulaires, copier, compte à rebours). */
-const $=id=>document.getElementById(id);
-
-/* Compte à rebours en jours (mis à jour une fois par minute) */
-(function(){
-  const t=Date.UTC(2026,10,18,10,0,0), el=$('cd');
-  function tick(){const d=t-Date.now();if(d<=0){el.textContent='En cours / terminé';return}
-    const j=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5);el.textContent='J-'+j+' · '+h+'h'}
-  tick(); setInterval(tick,60000);
-})();
-
-/* Menu téléphone */
-(function(){
-  const b=$('menu'), n=$('nav');
-  const set=o=>{n.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.textContent=o?'Fermer':'Menu'};
-  b.addEventListener('click',()=>set(!n.classList.contains('open')));
-  n.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
-  addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
-})();
-
-/* Conférences : 6 onglets */
-const F=[
-  {n:'Intelligence Artificielle',c:'var(--f1)'},
-  {n:'Ingénierie Spatiale',c:'var(--f2)'},
-  {n:'Cryptomonnaies & Cybersécurité',c:'var(--f3)'},
-  {n:'Gestion des Données Numériques',c:'var(--f4)'},
-  {n:'Écosystème Entrepreneurial',c:'var(--f5)'}
-];
-const C=[
- {e:'Compréhension',t:"Technologies de Rupture : Cartographie des Opportunités pour l'Écosystème Camerounais",g:"Poser les fondamentaux et le vocabulaire commun de chaque filière : comprendre avant de bâtir.",cp:"ENSPY — École Nationale Supérieure Polytechnique de Yaoundé",
-  p:[["Intelligence Artificielle : Fondements, Promesses et Limites pour les Économies Émergentes","Diagnostic et audit de maturité IA pour les entreprises locales."],["Technologies Spatiales et Géospatiales : de l'Observation Satellite à la Donnée Terrain","Vulgarisation cartographique pour collectivités locales."],["Cryptomonnaies et Cybersécurité : Principes, Réglementation et Culture du Risque en Zone CEMAC","Conseil réglementaire et sensibilisation cybersécurité pour PME et administrations."],["Gestion des Données Numériques : Collecte, Conservation et Valorisation à l'Ère Digitale","Audit documentaire et maturité data des organisations."],["Écosystème Entrepreneurial : Logiques de Spécialisation et de Coopération entre Acteurs","Diagnostic de positionnement dans la chaîne de valeur."]]},
- {e:'Construction',t:"Ingénierie des Solutions Technologiques : du Concept au Prototype",g:"Comment on conçoit, développe et architecture une solution dans chaque filière.",cp:"Université de Yaoundé I — Département d'Informatique",
-  p:[["Ingénierie des Modèles d'IA : Construire des Systèmes Adaptés aux Données Locales","Studios de développement IA sur mesure."],["Conception de Solutions Géospatiales : Images Satellite et SIG","Bureaux d'étude cartographiques pour l'urbanisme et l'agriculture."],["Infrastructures Numériques Sécurisées : Smart Contracts et Sécurité par Conception","Contrats intelligents pour la traçabilité agricole ou les paiements."],["Ingénierie des Systèmes de Gestion des Données : Infrastructures Pérennes","Coffres-forts numériques pour notaires, banques, administrations."],["Construire son Modèle d'Affaires : de l'Idée à la Proposition de Valeur","Accompagnement à la structuration du business model."]]},
- {e:'Application',t:"Technologies en Action : Cas d'Usage et Déploiements Terrain au Cameroun",g:"Les technologies déployées dans des contextes réels et sectoriels camerounais.",cp:"SUP'PTIC — Postes, Télécommunications et TIC",
-  p:[["IA Appliquée : Agriculture de Précision, Santé et Services Publics","Solutions IA packagées pour coopératives et centres de santé."],["Applications Géospatiales : Foncier, Catastrophes et Agriculture","Services cartographiques pour litiges fonciers et assurance agricole."],["Cryptomonnaies et Cybersécurité en Pratique : Traçabilité et Infrastructures Critiques","Traçabilité cacao/café pour l'export ; réponse à incident pour PME."],["Données en Pratique : Dématérialisation, Preuve Juridique et Valorisation","Dématérialisation pour tribunaux, mairies, entreprises."],["Écosystèmes en Action : Collaborations Réussies au Cameroun","Courtage de partenariats intersectoriels."]]},
- {e:'Production',t:"De la Preuve de Concept à l'Échelle : Industrialiser les Solutions",g:"Passage à l'échelle, qualité et robustesse : du prototype au produit.",cp:"IAI-Cameroun — Centre d'Excellence Technologique Paul BIYA",
-  p:[["Industrialisation de l'IA : MLOps, Qualité des Données et Passage à l'Échelle","Maintenance et supervision de modèles en production."],["Industrialisation des Services Géospatiaux à Grande Échelle","Cartographie automatisée pour l'État et l'agro-industrie."],["Industrialiser la Confiance : Scalabilité Blockchain et SOC","Paiements blockchain à bas coût ; SOC mutualisés pour PME."],["Plateformes de Données à Grande Échelle : Standards et Certification","Hébergement certifié pour grands groupes et administrations."],["Structurer une Organisation pour Passer à l'Échelle","Conseil organisationnel pour startups en croissance."]]},
- {e:'Modèles économiques',t:"Monétiser l'Innovation : Modèles Économiques et Stratégies de Marché",g:"La question du modèle économique et du positionnement commercial de chaque filière.",cp:"ESSTIC — Sciences et Techniques de l'Information et de la Communication",
-  p:[["Modèles Économiques de l'IA : de la Licence au Service Prédictif à la Demande","Facturation à l'usage pour PME."],["Monétiser la Donnée Spatiale : Abonnements, Licences et Services","Bulletins cartographiques pour assureurs et agro-industriels."],["Monétiser la Confiance : Tokenisation, Abonnements et Assurance Cyber","Tokens communautaires ; assurance cyber packagée."],["La Conformité et la Donnée comme Services","Contrats récurrents de conformité documentaire."],["Financer la Croissance : Mécanismes de Financement au Cameroun","Levée de fonds et mise en relation investisseurs."]]},
- {e:'Entrepreneuriat',t:"L'Écosystème comme Chaîne de Création de Valeur : Spécialisation et Collaboration",g:"Comment chaque filière devient une entreprise viable, insérée dans un écosystème interdépendant.",cp:"NUMIATECH — clôture du cycle itinérant",
-  p:[["De la Startup IA à l'Entreprise Pérenne : Lever des Fonds et Bâtir une Équipe","Structuration juridique et levée de fonds."],["Entrepreneuriat Spatial : Partenariats Institutionnels et Marchés Publics","Appels d'offres publics (cadastre, cartographie nationale)."],["Entreprendre dans la Crypto et la Cybersécurité : Cadre, Investisseurs, Confiance","Accompagnement réglementaire CEMAC ; certification internationale."],["Entreprendre dans les Données : Contrats Publics et Confiance comme Actif","Contrats-cadres de dématérialisation avec l'administration."],["La Chaîne de Valeur Inter-Filières","Consortiums inter-filières pour grands appels à projets."]]}
-];
-const months=['Janv.','Févr.','Mars','Avril','Mai','Juin'];
-$('fils').innerHTML=F.map(f=>`<span class="fil"><i style="background:${f.c}"></i>${f.n}</span>`).join('');
-const tabs=$('tabs'), panel=$('panel');
-tabs.innerHTML=C.map((c,i)=>`<button class="tab" type="button" role="tab" id="tab-${i}" aria-selected="${i===0}"><small>${months[i]} 2027 · Étape ${i+1}</small>${c.e}</button>`).join('');
-function show(i){
-  const c=C[i];
-  tabs.querySelectorAll('.tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
-  panel.innerHTML=`<span class="label cat">Conférence ${i+1} / 6 · ${c.e}</span><h3>${c.t}</h3><p class="goal">${c.g}</p><span class="campus">Campus hôte suggéré · ${c.cp}</span>
-  <div class="talks">${c.p.map((p,j)=>`<div class="talk"><div class="f"><i style="background:${F[j].c}"></i>${F[j].n}</div><div class="t">${p[0]}</div><div class="o">${p[1]}</div></div>`).join('')}</div>`;
-}
-tabs.addEventListener('click',e=>{const b=e.target.closest('.tab'); if(b) show(+b.id.split('-')[1])});
-show(0);
-
-/* Signature « Rédaction SYNEO » sur chaque article */
-document.querySelectorAll('.art .d').forEach(d=>{
-  const by=document.createElement('span'); by.className='by';
-  by.innerHTML='<svg viewBox="0 0 200 200" aria-hidden="true"><use href="#av"/></svg><b>Rédaction SYNEO</b><span>· '+d.textContent+'</span>';
-  d.replaceWith(by);
-});
-
-/* Pages : chaque page a son adresse (#actualites, #programme…) */
-(function(){
-  const PAGES={
-    accueil:{t:'SYNEO — La Synergie pour le développement',ids:['accueil','film','une','tribune','impact','flash']},
-    actualites:{t:'Actualités — SYNEO',ids:['roue','rubriques']},
-    programme:{t:'PRISME — SYNEO',ids:['prisme','conferences']},
-    'a-propos':{t:'Qui sommes-nous — SYNEO',ids:['apropos','equipe']},
-    partenaires:{t:'Partenaires — SYNEO',ids:['partenaires']},
-    contribuer:{t:'Contribuer — SYNEO',ids:['contribuer']},
-    contact:{t:'Contact — SYNEO',ids:['contact']}
-  };
-  const main=document.querySelector('main'), links=[...document.querySelectorAll('nav.rub a, .ft-nav a')];
-  function resolve(h){
-    if(PAGES[h]) return {page:h,target:null};
-    for(const k in PAGES) if(PAGES[k].ids.includes(h)) return {page:k,target:$(h)};
-    return {page:'accueil',target:null};
-  }
-  function go(){
-    const {page,target}=resolve(decodeURIComponent(location.hash.slice(1)));
-    [...main.children].forEach(el=>{ if(el.id) el.hidden=!PAGES[page].ids.includes(el.id) });
-    document.title=PAGES[page].t;
-    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+page));
-    document.querySelectorAll('video').forEach(v=>{if(v.offsetParent===null)v.pause()});
-    if(target && target.id!==PAGES[page].ids[0]) scrollTo(0,target.getBoundingClientRect().top+scrollY-70);
-    else scrollTo(0,0);
-  }
-  addEventListener('hashchange',go); go();
-  addEventListener('load',()=>setTimeout(go,0)); /* annule le saut natif vers l'ancre au chargement */
-})();
-
-/* Copier */
-function copy(txt,btn){
-  const o=btn.textContent, done=()=>{btn.textContent='Copié';setTimeout(()=>btn.textContent=o,1500)};
-  if(navigator.clipboard) navigator.clipboard.writeText(txt).then(done).catch(()=>{btn.textContent=txt}); else btn.textContent=txt;
-}
-document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copy(b.dataset.copy,b)));
-
-/* Formulaires → message WhatsApp prêt */
-const val=id=>$(id).value.trim();
-let msg='';
-$('form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const ok=['f-nom','f-tel','f-titre','f-txt'].every(val);
-  $('f-err').hidden=ok; if(!ok) return;
-  msg=`Proposition de contenu SYNEO\nRubrique : ${val('f-rub')}\nTitre : ${val('f-titre')}\nAuteur : ${val('f-nom')} (${val('f-tel')})\n\n${val('f-txt')}`;
-  $('f-wa').href='https://wa.me/237657300479?text='+encodeURIComponent(msg);
-  $('f-ok').hidden=false;
-});
-$('f-copy').addEventListener('click',e=>copy(msg,e.currentTarget));
-$('cform').addEventListener('submit',e=>{
-  e.preventDefault();
-  const ok=val('c-nom')&&val('c-msg'); $('c-err').hidden=!!ok; if(!ok) return;
-  const m=`Bonjour SYNEO,\n${val('c-msg')}\n\n${val('c-nom')}${val('c-tel')?' · '+val('c-tel'):''}`;
-  const a=$('c-wa'); a.href='https://wa.me/237657300479?text='+encodeURIComponent(m); a.hidden=false;
-});
-</script>
+<a class="wa" href="https://wa.me/237657300479" target="_blank" rel="noopener" aria-label="Écrire à SYNEO sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg><span>WhatsApp</span></a>
+<script src="assets/main.js" defer></script>
 </body>
 </html>
