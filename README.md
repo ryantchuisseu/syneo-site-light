@@ -9,7 +9,7 @@ Version allégée du site SYNEO (dépôt d'origine : `ryantchuisseu/syneo-site-w
 | Animations | 9 (prisme 3D, film qui s'agrandit, roue, texte qui s'allume…) | **Aucune** |
 | Canvas / boucles `requestAnimationFrame` | 3 | **0** |
 | Film (3,2 Mo) | Lecture auto au chargement | **Chargé seulement au clic** (`preload="none"`) |
-| `index.html` | ~117 Ko | ~55 Ko |
+| `index.html` | ~117 Ko | ~64 Ko |
 | Contenu, pages, charte | — | **Identiques** (7 pages, mêmes textes, mêmes couleurs) |
 
 Conservé : navigation par pages (`#actualites`, `#programme`…), onglets des conférences,
